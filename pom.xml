@@ -24,17 +24,16 @@
                 <version>${mule.maven.plugin.version}</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <deployments>
-                        <deployment>
-                            <type>cloudhub2</type>
-                            <clientId>${cloudhub.clientId}</clientId>
-                            <clientSecret>${cloudhub.clientSecret}</clientSecret>
-                            <applicationName>${project.artifactId}</applicationName>
-                            <environment>Sandbox</environment>
-                            <target>Cloudhub-US-East-2</target>
-                            <provider>MC</provider>
-                        </deployment>
-                    </deployments>
+                    <cloudhub2Deployment>
+                        <uri>https://anypoint.mulesoft.com</uri>
+                        <provider>MC</provider>
+                        <environment>Sandbox</environment>
+                        <target>Cloudhub-US-East-2</target>
+                        <applicationName>${appName}</applicationName>
+                        <connectedAppClientId>${cloudhub.clientId}</connectedAppClientId>
+                        <connectedAppClientSecret>${cloudhub.clientSecret}</connectedAppClientSecret>
+                        <connectedAppGrantType>client_credentials</connectedAppGrantType>
+                    </cloudhub2Deployment>
                 </configuration>
             </plugin>
         </plugins>
