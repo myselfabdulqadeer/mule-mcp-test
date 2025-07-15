@@ -31,8 +31,8 @@ jobs:
           echo "Deploying Mule app..."
           # Deploy using Mule Maven Plugin to CloudHub 2.0 US East 2
           mvn deploy -DmuleDeploy \
-            -Dcloudhub.clientId=${{ secrets.CLOUDHUB_CLIENT_ID }} \
-            -Dcloudhub.clientSecret=${{ secrets.CLOUDHUB_CLIENT_SECRET }}
+            -Dclient.Id=${{ secrets.CLOUDHUB_CLIENT_ID }} \
+            -Dclient.secret=${{ secrets.CLOUDHUB_CLIENT_SECRET }}
           # Make sure to set CLOUDHUB_CLIENT_ID and CLOUDHUB_CLIENT_SECRET secrets in your repository settings
       # Add deployment step here if you have a deployment CLI or API
       # - name: Deploy to CloudHub
