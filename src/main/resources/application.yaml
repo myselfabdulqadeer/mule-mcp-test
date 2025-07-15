@@ -1,3 +1,8 @@
 http:
   port: "8081"
   host: "0.0.0.0"
+
+
+cloudhub:
+  clientId: "7f179bbba4094f01858b1874f457c948"
+  clientSecret: "2c76d7AEEfBa4DfBb3258DE8079150BB"

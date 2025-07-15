@@ -23,7 +23,19 @@
                 <artifactId>mule-maven-plugin</artifactId>
                 <version>${mule.maven.plugin.version}</version>
                 <extensions>true</extensions>
-                <configuration/>
+                <configuration>
+                    <deployments>
+                        <deployment>
+                            <type>cloudhub2</type>
+                            <clientId>${cloudhub.clientId}</clientId>
+                            <clientSecret>${cloudhub.clientSecret}</clientSecret>
+                            <applicationName>${project.artifactId}</applicationName>
+                            <environment>Sandbox</environment>
+                            <target>Cloudhub-US-East-2</target>
+                            <provider>MC</provider>
+                        </deployment>
+                    </deployments>
+                </configuration>
             </plugin>
         </plugins>
     </build>

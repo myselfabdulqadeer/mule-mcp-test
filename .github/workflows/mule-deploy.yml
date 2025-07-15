@@ -29,13 +29,11 @@ jobs:
       - name: Deploy to CloudHub
         run: |
           echo "Deploying Mule app..."
-          # Example: Deploy using Mule Maven Plugin
-          mvn deploy -DmuleDeploy -Dmule.env=cloudhub \
-            -Dcloudhub.username=${{ secrets.CLOUDHUB_USERNAME }} \
-            -Dcloudhub.password=${{ secrets.CLOUDHUB_PASSWORD }} \
-            -Dcloudhub.applicationName=test-mule-mcp \
-            -Dcloudhub.environment=Sandbox
-          # Make sure to set CLOUDHUB_USERNAME and CLOUDHUB_PASSWORD secrets in your repository settings
+          # Deploy using Mule Maven Plugin to CloudHub 2.0 US East 2
+          mvn deploy -DmuleDeploy \
+            -Dcloudhub.clientId=${{ secrets.CLOUDHUB_CLIENT_ID }} \
+            -Dcloudhub.clientSecret=${{ secrets.CLOUDHUB_CLIENT_SECRET }}
+          # Make sure to set CLOUDHUB_CLIENT_ID and CLOUDHUB_CLIENT_SECRET secrets in your repository settings
       # Add deployment step here if you have a deployment CLI or API
       # - name: Deploy to CloudHub
       #   run: |
