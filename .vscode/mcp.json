@@ -1,0 +1,28 @@
+{
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "anypoint-client-id",
+      "description": "Anypoint Client ID",
+      "password": false
+    },
+    {
+      "type": "promptString", 
+      "id": "anypoint-client-secret",
+      "description": "Anypoint Client Secret",
+      "password": true
+    }
+  ],
+  "servers": {
+    "mulesoft": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@mulesoft/mcp-server", "start"],
+      "env": {
+        "ANYPOINT_CLIENT_ID": "${input:anypoint-client-id}",
+        "ANYPOINT_CLIENT_SECRET": "${input:anypoint-client-secret}",
+        "ANYPOINT_REGION": "PROD_US"
+      }
+    }
+  }
+}

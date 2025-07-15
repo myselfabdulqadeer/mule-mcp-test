@@ -1,0 +1,21 @@
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:secure-properties="http://www.mulesoft.org/schema/mule/secure-properties" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd  http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd  http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd   http://www.mulesoft.org/schema/mule/secure-properties http://www.mulesoft.org/schema/mule/secure-properties/current/mule-secure-properties.xsd">
+
+  <configuration-properties file="application.yaml"></configuration-properties>
+  <http:listener-config name="Listener-config">
+    <http:listener-connection port="${http.port}" host="${http.host}"></http:listener-connection>
+  </http:listener-config>
+  <flow name="name1">
+    <http:listener config-ref="Listener-config" doc:id="kkzpno" doc:name="Listener" path="/testmcp"></http:listener>
+    <ee:transform doc:id="wmjnxe" doc:name="Transform Message">
+      <ee:message>
+        <ee:set-payload doc:id="abqiii" doc:name="Set payload"><![CDATA[%dw 2.0
+        output application/json
+        ---
+        {
+            firstName : "abdul",
+            lastName : "qadeer",
+        }]]></ee:set-payload>
+      </ee:message>
+    </ee:transform>
+  </flow>
+</mule>
