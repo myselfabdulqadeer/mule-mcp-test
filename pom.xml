@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>165b78e1-db2b-450d-9255-c48985abb9b1</groupId>
     <artifactId>test-mule-mcp</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <packaging>mule-application</packaging>
     <name>test-mule-mcp</name>
     <properties>
